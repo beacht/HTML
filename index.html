@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <title>Group 13 LAMP Stack Demo</title>
+        <script type = "text/javascript" src = "js/md5.js"></script>
+        <script type = "text/javascript" src = "js/code.js"></script>
+
+    <link href ="css/styles.css" rel="stylesheet">
+    <link href ="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<style>
+    body
+    {
+        background-image: url("https://img.freepik.com/free-vector/zigzag-lines-pattern-black-background_1017-37483.jpg");
+        background-size: cover;
+    }
+</style>
+<body>
+<hl id="title">COP 4331 LAMP Stack Demo</hl>
+    <div class = "form-box">
+        <div class = "button-box">
+            <div id = "btn"></div>
+            <button type="button" class="toggle-btn" onclick="loginShift()">Log In</button>
+            <button type="button" class="toggle-btn"onclick="registerShift()">Register</button>
+        </div>
+        <form id ="loginForm" class="input-group">
+        <input type = "text" id ="loginName" class="input-field" placeholder="Username" required>
+        <input type = "text" id ="loginPassword" class="input-field" placeholder="Password" required>
+        <button type = "button" id="loginButton" class = "buttons" onclick="doLogin();">Login</button>
+        </form>
+        <form id ="registerForm" class="input-group">
+            <input type = "text" id="newUserFirst" class="input-field" placeholder="First Name" required>
+            <input type = "text" id="newUserLast" class="input-field" placeholder="Last Name" required>
+            <input type = "text" id="newUserLoginName" class="input-field" placeholder="Username" required>
+            <input type = "text" id="newUserLoginPassword" class="input-field" placeholder="Password" required>
+            <button type = "button" id="registerButton" class = "buttons" onclick="Register();">Register</button>
+            <span id="loginResult"></span>
+            <br />
+    </div>
+
+    <script>
+        var x = document.getElementById("loginForm")
+        var y = document.getElementById("registerForm")
+        var z = document.getElementById("btn")
+
+        function registerShift()
+        {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px"
+        }
+
+        function loginShift()
+        {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left =  "0px"
+        }
+    </script>
+</body>
+
+</html>

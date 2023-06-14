@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- .js and .css imports -->
+    <head>
+        <title>COP 4331 small Project</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script type = "text/javascript" src = "js/md5.js"></script>
+        <script type = "text/javascript" src = "js/code.js"></script>
+
+        <link href ="css/contactsStyle.css" rel="stylesheet">
+        <link href ="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() 
+            {
+                readCookie();
+            }, false);
+        </script>
+    </head>
+    
+    <body>
+
+        <!-- The Header -->
+        <div class="header">
+            <span id="userName"></span><br />
+        </div>
+
+        <!-- The Tab Bar -->
+        <div class="tab-bar">
+            <button id="default" class="tab-buttons" onclick="openTab('Home')">Home</button>
+            <button class="tab-buttons" onclick="openTab('Contacts')">Add Contacts</button>
+            <button class="tab-buttons" onclick="openTab('About')">About</button>
+            <button class="tab-buttons" onclick="doLogout()">Log Out</button> 
+        </div>
+
+        <!-- The Home Tab -->
+        <div id="Home" class="tab-content">
+            <input type = "text" id ="nameText" class="input-field" tabindex="0" placeholder="search" required>
+            <button type = "button" id="searchContactButton" tabindex="1" class = "Search-button" onclick="ContactSearch();">
+            <i class="glyphicon glyphicon-search"></i>
+            </button>
+            <p class="tab-para"><div id="ContactSearchResult"></div></p>
+
+            <script>
+                var enter = document.getElementById("nameText");
+                enter.addEventListener("keypress", function(event)
+                {
+                    if (event.key == "Enter")
+                    {
+                        event.preventDefault();
+                        document.getElementById("searchContactButton").click();
+                    }
+                });
+            </script>
+        </div>
+
+        <!-- The Contacts Tab -->
+        <div id="Contacts" class="tab-content" style="display:none">
+            <div id="newContact">
+                <span id="ContactCreateResult"></span><br />
+                <input type = "text" id="nameCreateText" class="rg-input-field" placeholder="Name" required><br />
+                <input type = "text" id="phoneCreateText" class="rg-input-field" placeholder="Phone number" required><br />
+                <input type = "text" id="emailCreateText" class="rg-input-field" placeholder="email" required><br />
+                <button type = "button" id="createButton" class = "buttons" onclick="ContactCreate();">create contact</button>    
+            </div>
+        </div>
+
+        <!-- The About Tab -->
+        <div id="About" class="tab-content" style="display:none">
+            <p>Test2</p>
+        </div>
+
+        <!-- The Script for the Tabs -->
+        <script>
+            function openTab(tabName)
+            {
+                var i;
+                var x = document.getElementsByClassName("tab-content");
+                for (i = 0; i < x.length; i++)
+                {
+                    x[i].style.display = "none";
+                }
+                document.getElementById(tabName).style.display = "block";
+            }
+            document.getElementById("default").click();
+        </script>
+
+    </body>
+
+</html>
